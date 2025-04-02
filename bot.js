@@ -67,7 +67,8 @@ bot.on("message", (msg)=> {
 
                 
             if (data.results.length > 0) {
-                const ricette = data.results.map(r => `Nome Ricetta: ${r.title}\nLink: https://spoonacular.com/recipes/${r.title.replace(/\s+/g, '-')}-${r.id}`).join('\n\n');                    bot.sendMessage(chatId, ricette);
+                const ricette = data.results.map(r => `Nome Ricetta: ${r.title}\nLink: https://spoonacular.com/recipes/${r.title.replace(/\s+/g, '-')}-${r.id}`).join('\n\n');                    
+                bot.sendMessage(chatId, ricette);
             } else {
                 bot.sendMessage(chatId, "Nessuna ricetta trovata senza questi allergeni.");
             }
